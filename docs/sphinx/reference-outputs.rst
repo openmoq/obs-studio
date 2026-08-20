@@ -74,6 +74,22 @@ Output Definition Structure (obs_output_info)
      frame.  Audio data will be correctly truncated down to the exact
      audio sample according to that video frame timing.
 
+   - **OBS_OUTPUT_NO_INTERLEAVE** - Output does not want A/V interleaving.
+
+     When this capability flag is used, encoded packets are delivered as
+     soon as each encoder produces them, instead of being held until a
+     packet of the opposing type establishes a monotonic muxed order.
+     This is intended for transports that carry each elementary stream
+     independently and whose receiver synchronises from media
+     timestamps; a muxed container should not use it.
+
+     The output must then handle two things itself: video is no longer
+     gated on the first keyframe, so the first video packet may be a
+     delta frame, and packets arrive per encoder with no cross-type
+     ordering or timestamp offset normalisation.
+
+     Ignored unless both video and audio are present.
+
 .. member:: const char *(*obs_output_info.get_name)(void *type_data)
 
    Get the translated name of the output type.
