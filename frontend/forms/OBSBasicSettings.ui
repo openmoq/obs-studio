@@ -1849,6 +1849,27 @@
                </widget>
               </item>
               <item>
+               <widget class="QGroupBox" name="servicePropertiesGroupBox">
+                <property name="title">
+                 <string>Basic.Settings.Stream.ServiceOptions</string>
+                </property>
+                <layout class="QVBoxLayout" name="servicePropertiesLayout">
+                 <property name="leftMargin">
+                  <number>8</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>2</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>8</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>8</number>
+                 </property>
+                </layout>
+               </widget>
+              </item>
+              <item>
                <widget class="QGroupBox" name="multitrackVideoGroupBox">
                 <property name="title">
                  <string>Basic.Settings.Stream.MultitrackVideoLabel</string>
