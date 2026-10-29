@@ -71,6 +71,16 @@ Service Definition Structure
 
    :return: The properties of the service
 
+   The frontend displays these properties in the *Service Options* group
+   of the Stream settings page.  In that context ``get_properties`` is
+   called with *data* set to ``NULL`` and ``get_properties2`` is not
+   used.  Properties named after settings owned by the Stream page
+   (``server``, ``key``, ``bearer_token``, ``use_auth``, ``username``,
+   ``password``, ``service``, ``protocol``, ``using_custom_server`` and
+   ``bwtest``) are removed before the group is displayed.  The remaining
+   values are saved along with their defaults as explicit values, as
+   services do not have their defaults applied on creation.
+
 .. member:: void (*obs_service_info.update)(void *data, obs_data_t *settings)
 
    Updates the settings for this service.
